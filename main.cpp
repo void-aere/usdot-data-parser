@@ -40,8 +40,8 @@ int main() {
     for (flightRecorder::iterator it = data.begin(); it != data.end(); ++it) {
         short  year = it->first;
         double acDays = it->second.first;                        // unit: aircraft * day
-        double acFlHr = it->second.second;                       // unit: aircraft * flight hour
-        double annualHours = daysInYear(year) * acFlHr / acDays; // unit: flight hour / year
+        double airHrs = it->second.second;                       // unit: flight hour
+        double annualHours = daysInYear(year) * airHrs / acDays; // unit: flight hour / aircraft / year
         std::cout << year << '\t' << annualHours << '\n';
     }
 }
